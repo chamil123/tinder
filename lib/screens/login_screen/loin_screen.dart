@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 5,
                   ),
                   const Text(
-                    "T  I  N  D  E  R",
+                    "T  I  N  D  E  R Test",
                     // style: GoogleFonts.popins(),
                   ),
                   SizedBox(
