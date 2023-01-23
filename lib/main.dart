@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+import 'package:tinder/provider/signUp_provider.dart';
+import 'package:tinder/provider/user_provider.dart';
+
 import 'screens/login_screen/loin_screen.dart';
 import 'screens/splash_screen/splash_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

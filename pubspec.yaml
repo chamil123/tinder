@@ -54,6 +54,15 @@ dev_dependencies:
   awesome_dialog: ^3.0.2
   lottie: ^1.4.1
   flutter_staggered_animations: ^1.1.1
+  fluttertoast: ^8.1.2
+  http: ^0.13.5
+  carousel_slider: ^4.2.1
+  percent_indicator: ^4.0.0
+  avatar_view: ^1.0.1
+  bottom_picker: ^2.0.1
+  intl: ^0.17.0 
+  email_validator: '^2.1.16'
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

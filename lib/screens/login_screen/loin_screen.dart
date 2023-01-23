@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:tinder/screens/my_profile.dart/my_profile.dart';
+import 'package:tinder/screens/register_screen/reg_user_name.dart';
 import '../../utils/constatnt.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -108,6 +110,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: const Text('Login', textAlign: TextAlign.center),
                       ),
                     ),
+                  ),
+                  GestureDetector(
+                    child: const Text(
+                      'Sign up',
+                      style: TextStyle(
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline),
+                    ),
+                    onTap: () async {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => Userregistername())));
+                    },
                   ),
                 ],
               ),
