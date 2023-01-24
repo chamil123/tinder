@@ -62,6 +62,7 @@ dev_dependencies:
   bottom_picker: ^2.0.1
   intl: ^0.17.0 
   email_validator: '^2.1.16'
+  rive: ^0.9.1
   
 
 # For information on the generic Dart part of this file, see the
