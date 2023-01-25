@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tinder/provider/signUp_provider.dart';
 import 'package:tinder/provider/user_provider.dart';
+import 'package:tinder/screens/home_screen/home_screen.dart';
 
 import 'screens/login_screen/loin_screen.dart';
 import 'screens/splash_screen/splash_screen.dart';
