@@ -11,6 +11,8 @@ import 'package:rive/rive.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../home_screen/home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -183,7 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            const CustomDrawer(),
+                                            const HomeScreen(),
                                       ),
                                     );
                                   },
