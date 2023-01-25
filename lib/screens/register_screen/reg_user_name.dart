@@ -62,6 +62,8 @@ class _Userregisternamestate extends State<Userregistername> {
                           Padding(
                             padding: const EdgeInsets.only(top: 50),
                             child: TextFormField(
+                              style: TextStyle(
+                                  fontSize: 22, fontFamily: 'Raleway'),
                               controller: value.usernamecontroller,
                               onChanged: (value) {
                                 setState(() {
@@ -69,11 +71,11 @@ class _Userregisternamestate extends State<Userregistername> {
                                 });
                               },
                               decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 25.0, horizontal: 10.0),
+                                border: InputBorder.none,
                                 filled: true,
-                                fillColor: Color.fromARGB(255, 235, 235, 235),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
+                                fillColor: Color.fromARGB(255, 243, 243, 243),
                               ),
                             ),
                           ),

@@ -13,7 +13,7 @@ class Genderchange extends StatefulWidget {
 }
 
 class _Genderchangestate extends State<Genderchange> {
-  bool isFemale = true;
+  bool isFemale = false;
   bool isMale = false;
   double malevalue = 0;
   double femalevalue = 0;

@@ -82,8 +82,9 @@ class _Userregbirthdaystate extends State<Userregbirthday> {
                                     fontSize: 18,
                                   ),
                                   titleStyle: TextStyle(
+                                    fontSize: 22,
+                                    fontFamily: 'Raleway',
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 18,
                                     color: Colors.black,
                                   ),
                                   onSubmit: (index) {
@@ -101,11 +102,11 @@ class _Userregbirthdaystate extends State<Userregbirthday> {
                                 ).show(context);
                               },
                               decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 25.0, horizontal: 10.0),
+                                border: InputBorder.none,
                                 filled: true,
-                                fillColor: Color.fromARGB(255, 235, 235, 235),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
+                                fillColor: Color.fromARGB(255, 243, 243, 243),
                               ),
                             ),
                           ),

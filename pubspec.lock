@@ -549,7 +549,7 @@ packages:
     source: hosted
     version: "3.2.1"
   rive:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: rive
       url: "https://pub.dartlang.org"
