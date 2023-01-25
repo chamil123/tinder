@@ -63,7 +63,7 @@ class _Genderchangestate extends State<Genderchange> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(4.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width,
                               height: 180,

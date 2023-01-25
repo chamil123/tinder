@@ -38,7 +38,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  camera:
+  path_provider:
+  path:
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -62,7 +64,11 @@ dev_dependencies:
   bottom_picker: ^2.0.1
   intl: ^0.17.0 
   email_validator: '^2.1.16'
+<<<<<<< HEAD
+  image_picker: ^0.8.6+1
+=======
   rive: ^0.9.1
+>>>>>>> 7fee01b465419a072a5dd3f4b1111d037228b3fa
   
 
 # For information on the generic Dart part of this file, see the
