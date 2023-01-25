@@ -1,22 +1,22 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tinder/provider/user_provider.dart';
-
+import 'package:image_picker/image_picker.dart';
 import 'package:tinder/screens/register_screen/gender_screen.dart';
-import 'package:tinder/screens/register_screen/reg_user_verification.dart';
 
-class Userregisterphone extends StatefulWidget {
-  Userregisterphone({super.key});
+class Userverification extends StatefulWidget {
+  Userverification({super.key});
 
   @override
-  State<Userregisterphone> createState() => _Userregisterphonestate();
+  State<Userverification> createState() => _Userverificationstate();
 }
 
-class _Userregisterphonestate extends State<Userregisterphone> {
+class _Userverificationstate extends State<Userverification> {
   late double height, width;
-  String phoneno = "";
+  File? imageFile;
 
-  final TextEditingController phonecontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Consumer<UserProvider>(
@@ -31,7 +31,7 @@ class _Userregisterphonestate extends State<Userregisterphone> {
                   padding: const EdgeInsets.only(top: 30),
                   child: Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 3,
+                    height: MediaQuery.of(context).size.height / 1.2,
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Column(
@@ -42,7 +42,7 @@ class _Userregisterphonestate extends State<Userregisterphone> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Your Phone no is...',
+                                  'Verification..',
                                   style: TextStyle(fontSize: 22),
                                 )
                               ],
@@ -54,30 +54,64 @@ class _Userregisterphonestate extends State<Userregisterphone> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'This is how you will appear on this..',
+                                  'NIC/Driving License/Passport',
                                   style: TextStyle(fontSize: 16),
                                 )
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 50),
-                            child: TextFormField(
-                              maxLength: 10,
-                              controller: value.phonecontroller,
-                              onChanged: (value) {
-                                setState(() {
-                                  phoneno = value;
-                                });
-                              },
-                              decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Color.fromARGB(255, 235, 235, 235),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
+                          if (imageFile != null)
+                            Container(
+                              width: 440,
+                              height: 400,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                image: DecorationImage(
+                                    image: FileImage(imageFile!),
+                                    fit: BoxFit.cover),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                            )
+                          else
+                            Container(
+                              width: 440,
+                              height: 400,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                border:
+                                    Border.all(width: 8, color: Colors.black12),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              child: const Text(
+                                'Front side',
+                                style: TextStyle(fontSize: 26),
                               ),
                             ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: ElevatedButton(
+                                    onPressed: () =>
+                                        getImage(source: ImageSource.camera),
+                                    child: const Text('Capture Image',
+                                        style: TextStyle(fontSize: 18))),
+                              ),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Expanded(
+                                child: ElevatedButton(
+                                    onPressed: () =>
+                                        getImage(source: ImageSource.gallery),
+                                    child: const Text('Select Image',
+                                        style: TextStyle(fontSize: 18))),
+                              )
+                            ],
                           ),
                         ],
                       ),
@@ -99,11 +133,11 @@ class _Userregisterphonestate extends State<Userregisterphone> {
                             borderRadius: new BorderRadius.circular(30.0),
                           ),
                           onPressed: () {
-                            value.usermobilenoreg();
+                            value.usernamereg();
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Userverification(),
+                                builder: (context) => Genderchange(),
                               ),
                             );
                           },
@@ -127,5 +161,20 @@ class _Userregisterphonestate extends State<Userregisterphone> {
         );
       },
     );
+  }
+
+  void getImage({required ImageSource source}) async {
+    final file = await ImagePicker().pickImage(
+        source: source,
+        maxWidth: 640,
+        maxHeight: 480,
+        imageQuality: 70 //0 - 100
+        );
+
+    if (file?.path != null) {
+      setState(() {
+        imageFile = File(file!.path);
+      });
+    }
   }
 }
