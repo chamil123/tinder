@@ -61,7 +61,7 @@ class _Userregisterphonestate extends State<Userregisterphone> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 0),
+                            padding: const EdgeInsets.only(top: 20),
                             child: TextFormField(
                               style: TextStyle(
                                   fontSize: 22, fontFamily: 'Raleway'),

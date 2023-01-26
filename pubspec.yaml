@@ -65,7 +65,7 @@ dev_dependencies:
   intl: ^0.17.0 
   email_validator: '^2.1.16'
   image_picker: ^0.8.6+1
-  
+  rive: ^0.9.1
   
   
 
