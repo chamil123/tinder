@@ -85,24 +85,26 @@ class _Genderchangestate extends State<Genderchange> {
                                               4,
                                           child: Column(
                                             children: [
-                                              GestureDetector(
-                                                onTap: (() {
-                                                  setState(() {
-                                                    isFemale = false;
-                                                    isMale = true;
-                                                    UserProvider()
-                                                        .gendermale(gendermale);
-                                                  });
-                                                }),
-                                                child: Container(
-                                                  child: Column(
-                                                    children: [
-                                                      if (isMale == true) ...[
-                                                        male()
-                                                      ] else ...[
-                                                        maleblack()
+                                              Container(
+                                                child: GestureDetector(
+                                                  onTap: (() {
+                                                    setState(() {
+                                                      isFemale = false;
+                                                      isMale = true;
+                                                      // UserProvider().gendermale(
+                                                      //     gendermale);
+                                                    });
+                                                  }),
+                                                  child: Container(
+                                                    child: Column(
+                                                      children: [
+                                                        if (isMale == true) ...[
+                                                          male()
+                                                        ] else ...[
+                                                          maleblack()
+                                                        ],
                                                       ],
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
                                               )
@@ -123,24 +125,25 @@ class _Genderchangestate extends State<Genderchange> {
                                               4,
                                           child: Column(
                                             children: [
-                                              GestureDetector(
-                                                onTap: (() {
-                                                  setState(() {
-                                                    isFemale = true;
-                                                    isMale = false;
-                                                    UserProvider().genderfemale(
-                                                        genderfemale);
-                                                  });
-                                                }),
-                                                child: Container(
-                                                  child: Column(
-                                                    children: [
-                                                      if (isFemale == true) ...[
-                                                        female(),
-                                                      ] else ...[
-                                                        femaleblack()
+                                              Container(
+                                                child: GestureDetector(
+                                                  onTap: (() {
+                                                    setState(() {
+                                                      isFemale = true;
+                                                      isMale = false;
+                                                    });
+                                                  }),
+                                                  child: Container(
+                                                    child: Column(
+                                                      children: [
+                                                        if (isFemale ==
+                                                            true) ...[
+                                                          female(),
+                                                        ] else ...[
+                                                          femaleblack()
+                                                        ],
                                                       ],
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
                                               )
@@ -163,36 +166,42 @@ class _Genderchangestate extends State<Genderchange> {
                   child: Align(
                     alignment: FractionalOffset.bottomCenter,
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                          bottom: 10, left: 20, right: 20),
-                      child: Container(
-                        color: Colors.transparent,
-                        width: MediaQuery.of(context).size.width,
-                        height: 60,
-                        child: FlatButton(
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(30.0),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Userregbirthday(),
+                        padding: const EdgeInsets.only(
+                            bottom: 10, left: 20, right: 20),
+                        child: Consumer<UserProvider>(
+                          builder: (context, value, child) {
+                            return Container(
+                              color: Colors.transparent,
+                              width: MediaQuery.of(context).size.width,
+                              height: 60,
+                              child: FlatButton(
+                                shape: new RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(30.0),
+                                ),
+                                onPressed: () {
+                                  if (isMale) {
+                                    value.gendermale(isMale);
+                                  } else {}
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Userregbirthday(),
+                                    ),
+                                  );
+                                },
+                                color: Color.fromARGB(255, 221, 19, 96),
+                                child: Text(
+                                  "Continue",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontFamily: 'Raleway',
+                                    fontSize: 22.0,
+                                  ),
+                                ),
                               ),
                             );
                           },
-                          color: Color.fromARGB(255, 221, 19, 96),
-                          child: Text(
-                            "Continue",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              fontFamily: 'Raleway',
-                              fontSize: 22.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                        )),
                   ),
                 ),
               ],

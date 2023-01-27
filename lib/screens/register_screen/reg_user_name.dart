@@ -99,7 +99,7 @@ class _Userregisternamestate extends State<Userregistername> {
                             borderRadius: new BorderRadius.circular(30.0),
                           ),
                           onPressed: () {
-                            value.usernamereg();
+                             value.usernamereg();
                             Navigator.push(
                               context,
                               MaterialPageRoute(
