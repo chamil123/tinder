@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:tinder/provider/signUp_provider.dart';
+import 'package:tinder/provider/tinder_card_provider.dart';
 import 'package:tinder/provider/user_provider.dart';
 import 'package:tinder/screens/home_screen/home_screen.dart';
 
@@ -15,6 +16,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => TinderCardProvider()),
       ],
       child: const MyApp(),
     ),
