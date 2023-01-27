@@ -289,13 +289,13 @@ class _Userverificationstate extends State<Userverification> {
                           borderRadius: new BorderRadius.circular(30.0),
                         ),
                         onPressed: () {
-                          value.usernamereg();
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Genderchange(),
-                            ),
-                          );
+                          value.registeruser();
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => Genderchange(),
+                          //   ),
+                          // );
                         },
                         color: Color.fromARGB(255, 221, 19, 96),
                         child: Text(

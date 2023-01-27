@@ -63,12 +63,12 @@ class SignupProvider extends ChangeNotifier {
     } else {}
   }
 
-  Future<void> registeruser() async {
-    var url = "https://est.satasme.uk/api/create";
-    final response = await http.post(Uri.parse(url), body: {
-      "username": _username.text,
-      "email": _email.text,
-      "password": _password.text,
-    });
-  }
+  // Future<void> registeruser() async {
+  //   var url = "https://est.satasme.uk/api/create";
+  //   final response = await http.post(Uri.parse(url), body: {
+  //     "username": _username.text,
+  //     "email": _email.text,
+  //     "password": _password.text,
+  //   });
+  // }
 }
