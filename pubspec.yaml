@@ -69,6 +69,7 @@ dev_dependencies:
   animated_bottom_navigation_bar: ^1.1.0+1
   hexcolor:
   salomon_bottom_bar: ^3.3.1
+
   
 
 # For information on the generic Dart part of this file, see the
